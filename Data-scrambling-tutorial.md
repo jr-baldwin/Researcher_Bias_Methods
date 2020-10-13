@@ -10,15 +10,15 @@ Jessie Baldwin
 
 ### Overview of tutorial
 
-#### [1. Simulate data](#link1)
+#### [1: Simulate data](#link1)
 
-#### [2. Scramble data](#link2)
+#### [2: Scramble data](#link2)
 
-#### [3. Compare scrambled and non-scrambled data](#link3)
+#### [3: Compare scrambled and non-scrambled data](#link3)
 
 <br>
 
-1. Simulate data<a name="link1"></a>
+1: Simulate data<a name="link1"></a>
 ====================================
 
 For the sake of this tutorial, we will first simulate data to have a certain association, and include some missing data. However, in reality, data scrambling should be applied to an existing dataset. If you wish to scramble your own dataset without following the simulation, please skip to [Scramble data](#link2) for the code.
@@ -220,7 +220,7 @@ We can see a statistically significant association between X3 and X4 (beta=0.26,
 
 <br>
 
-2. Scramble data<a name="link2"></a>
+2: Scramble data<a name="link2"></a>
 ====================================
 
 Scrambling data (also known as data shuffling) is surprisingly easy. It can be achieved using the 'sample' function.
@@ -234,7 +234,7 @@ scrambled_data <- as.data.frame(scrambled_data)
 
 <br>
 
-3. Compare scrambled and non-scrambled data<a name="link3"></a>
+3: Compare scrambled and non-scrambled data<a name="link3"></a>
 ===============================================================
 
 Let's have a look at the data before and after scrambling, ordering by ID. In practice, the person who scrambled the data (not the lead researcher) should do this as a check that the scrambling has worked.
