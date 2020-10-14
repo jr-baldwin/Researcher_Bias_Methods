@@ -25,7 +25,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # 1: Simulate data<a name="link1"></a>
 
-For the sake of this tutorial, we will first simulate data to have a certain association, and include some missing data. However, in reality, data scrambling should be applied to an existing dataset. If you wish to scramble your own dataset without following the simulation, please skip to [Scramble data](#link2) for the code.
+For the sake of this tutorial, we will first simulate data to be scrambled. If you wish to scramble your own dataset without following the simulation, please skip to [Scramble data](#link2) for the code.
 
 The simulated dataset will comprise 1000 observations across 5 variables, 2 of which are the predictor and outcome variable for the regression of interest. This simulation was adapted from Prof. Dorothy Bishop's scripts which can be found at: https://osf.io/gupxv/ 
 
@@ -33,7 +33,7 @@ The simulated dataset will comprise 1000 observations across 5 variables, 2 of w
 
 #### Install and load packages
 
-Please first install and load the following packages. If you have already installed them, you can skip to loading them.
+Please first install and load the following packages. 
 
 ```{r, message=FALSE, eval=FALSE}
 install.packages("MASS")
@@ -41,6 +41,8 @@ install.packages("tidyr")
 install.packages("dplyr")
 install.packages("psych")
 ```
+
+If you have already installed them, you can skip to loading them using the code below.
 
 ```{r, message=FALSE}
 library(MASS)
@@ -52,11 +54,20 @@ library(psych)
 <br>
 
 #### Specify parameters for the simulated variables<a name="link4"></a>
+
+Below we specify parameters for the simulation, including:
+- number of variables
+- sample size
+- mean value for the variables
+- variance of the variables
+- correlations between predictor variables
+- correlations between each predictor with the outcome 
+
 ```{r}
 nVar <- 4 # Number of simulated variables (we will treat the 4th variable as the outcome)
+N <- 1000 # Sample size for simulated dataset 
 mean <- 0 # Mean score for all variables in the sample - we're using z scores for simplicity
 var <- 1 # Variance of all variables. For z-scores, SD is 1, so variance is also 1
-N <- 1000 # Sample size for simulated dataset 
 cor <- 0.3 # Correlation between predictor variables (this is arbitrary)
 corDV <- c(0, 0, 0.2, 1) #correlation between each predictor and the outcome. The final 1 is the variance of the outcome, in effect, correlation of variable with itself.
 ```
@@ -64,6 +75,9 @@ corDV <- c(0, 0, 0.2, 1) #correlation between each predictor and the outcome. Th
 <br>
 
 #### Generate a correlation matrix for the simulated variables
+
+We will next generate a correlation matrix for the correlations between all the variables to be simulated.
+
 ```{r}
 covMatrix <- matrix(rep(cor, nVar*nVar), nrow=nVar) # create a matrix with correlation value 
 # Now we change the final row and column to show the correlation with the outcome. 
@@ -76,6 +90,9 @@ covMatrix
 <br>
 
 #### Generate simulated data from specified means, variances, and covariance matrix 
+
+We will now simulate the dataset from the specified parameters.
+
 ```{r}
 set.seed(109) # Set seed for reproducibility
 sim_data <- data.frame(id=1:N, mvrnorm(n = N, rep(mean, nVar), covMatrix)) # Include ID variable
