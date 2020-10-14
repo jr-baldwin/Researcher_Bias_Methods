@@ -163,8 +163,7 @@ Scrambling data (also known as data shuffling) is surprisingly easy. It can be a
 
 Below we scramble data for each row individually (meaning that all relationships between variables will be obscured). We do so following the advice in [this Stack Overflow post]( https://stackoverflow.com/questions/32620534/reshuffle-the-sequence-of-rows-in-data-frame).
 ```{r}
-scrambled_data <- lapply(sim_data, function(x) { sample(x)})
-scrambled_data <- as.data.frame(scrambled_data)
+scrambled_data <- as.data.frame(lapply(sim_data, function(x) { sample(x)}))
 ```
 
 <br>
