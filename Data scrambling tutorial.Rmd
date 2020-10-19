@@ -69,7 +69,7 @@ N <- 1000 # Sample size for simulated dataset
 mean <- 0 # Mean score for all variables in the sample - we're using z scores for simplicity
 var <- 1 # Variance of all variables. For z-scores, SD is 1, so variance is also 1
 cor <- 0.3 # Correlation between predictor variables (this is arbitrary)
-corDV <- c(0, 0, 0.2, 1) #correlation between each predictor and the outcome. The final 1 is the variance of the outcome, in effect, correlation of variable with itself.
+corDV <- c(0, 0, 0.2, 1) # Correlation between each predictor and the outcome. The final '1' is the variance of the outcome, in effect, the correlation of each variable with itself.
 ```
 
 <br>
@@ -110,10 +110,11 @@ We will now convert some of the simulated data to missing. This in order to test
 
 ```{r}
 # Specify variables X3 and X4 to have missing data 
-c_names = c("X3","X4")
+c_names <- c("X3","X4")
+
 # Specify 20% missing data 
-prc_missing = 0.20
-n_remove = prc_missing * nrow(sim_data)
+prc_missing <- 0.20
+n_remove <- prc_missing * nrow(sim_data)
 
 # Input missing data into simulated dataset
 sim_data <- sim_data %>%
@@ -181,7 +182,7 @@ head(sim_data[sim_data$id<10,], 10)
 
 #### Check data structure of the scrambled dataset
 ```{r}
-head(scrambled_data[order(scrambled_data$id, decreasing= F),], n = 10) # Scrambled dataset
+head(scrambled_data[order(scrambled_data$id),], 10)
 ```
 
 We can see that the values differ in the scrambled dataset, including the cells with missing data.
