@@ -6,6 +6,8 @@ Jessie Baldwin
 
 **This tutorial demonstrates how to use 'data scrambling' to blind your data, to allow proposed analyses to be trialled without insight into the findings. This involves randomly shuffling the data points so that any associations between variables are obscured, whilst the variable distributions (and amounts of missing data) remain the same. All analyses will be conducted within R.**
 
+**Please note that data scrambling was originally proposed by Profs Robert J. MacCoun and Saul Perlmutter; for more information, please see [here](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119095910.ch15?saml_referrer) for a detailed description and simulated examples.**
+
 <br>
 
 ### Overview of tutorial
