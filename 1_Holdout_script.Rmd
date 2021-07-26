@@ -1,0 +1,34 @@
+---
+title: "Script to split dataset into training and holdout samples"
+output: 
+  github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+**Randomly splitting a dataset into training and holdout samples is very simple to do in R, using the ["sample" function](https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/sample). Below we provide script to do so.**
+
+
+# 1: Open toy data<a name="link1"></a>
+
+We first open toy data. If you wish to subset your own dataset without using toy data, please skip to [Select subset of data at random](#link1) for the code.
+
+```{r, message=FALSE}
+library(psych)
+```
+
+```{r}
+data(iris)
+head(iris)
+str(iris)
+describe(iris)
+```
+
+# 2: Select subset of data at random<a name="link1"></a>
+```{r}
+subsample <- iris[sample(nrow(iris), 50), ] # select subset of 50 observations at random
+describe(subsample)
+```
