@@ -1,6 +1,6 @@
 # Researcher_Bias_Methods
 
-This repository contains scripts and tutorials for implementing the approaches described in the article ["Protecting against researcher bias in secondary data analysis: Challenges and potential solutions"](https://psyarxiv.com/md5pe/).
+This repository contains scripts and tutorials for implementing the approaches described in the article ["Protecting against researcher bias in secondary data analysis: Challenges and potential solutions"](https://psyarxiv.com/md5pe/). Scripts are provided in .Rmd and .md formats (.md format is recommended for viewing).
 
 Scripts are provided as follows:
 
