@@ -27,7 +27,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # 1: Simulate data<a name="link1"></a>
 
-For the sake of this tutorial, we will first simulate data to be scrambled. If you wish to scramble your own dataset without following the simulation, please skip to [Scramble data](#link2) for the code.
+For the sake of this tutorialgit config --global user.name "YOUR_USERNAME", we will first simulate data to be scrambled. If you wish to scramble your own dataset without following the simulation, please skip to [Scramble data](#link2) for the code.
 
 The simulated dataset will comprise 1000 observations across 5 variables, 2 of which are the predictor and outcome variable for the regression of interest. This simulation was adapted from Prof. Dorothy Bishop's scripts which can be found at: https://osf.io/gupxv/ 
 
