@@ -14,4 +14,4 @@ This script provides code to randomly split a dataset into a holdout and trainin
 
 3. *Simulation_subsample_trial_analyses*
 
-This script reproduces the simulation reported in Box 1 of the article. This simulation examines what an appropriate sample size should be for a subset of data to test and refine analyses on, before pre-registering. In particular, it examines the trade-off between a large enough sample size to sufficiently examine characteristics of the data versus small enough sample size to avoid insight into the statistical significance of the findings. 
+This script reproduces the simulation reported in Box 1 of an earlier pre-print of the article. This simulation examines what an appropriate sample size should be for a subset of data to test and refine analyses on, before pre-registering. In particular, it examines the trade-off between a large enough sample size to sufficiently examine characteristics of the data versus small enough sample size to avoid insight into the statistical significance of the findings. 
